@@ -224,6 +224,7 @@ var
                 height:300,
                 flashvars:"",
                 flashUrl:"",
+                bgcolor: '#000',
                 fullscreen: false
             },
             /**
@@ -236,6 +237,7 @@ var
              * @param   {Number} op.flashvars  设置 flash对象的 flashvars值
              * @param   {Number} op.flashUrl   设置 flash对象的 地址
              * @param   {Number} op.fullscreen 设置 是否运行全屏
+             * @param   {Number} op.bgcolor    设置 flash 背景颜色
              * @return  {void}
              */
             init:function(name,op){
@@ -262,6 +264,7 @@ var
                         '<param name="quality" value="high" />',
                         '<param name="allowscriptaccess" value="always" />',
                         '<param name="wmode" value="{$wmode}"/>',
+                        '<param name="bgcolor" value="{$bgcolor}"/>',
                         '<param name="allowFullScreen" value="{$fullscreen}"/>',
                         '<param name="allowFullScreenInteractive" value="{$fullscreen}"/>',
                         '<embed ',
@@ -275,6 +278,7 @@ var
                             'quality="high" ',
                             'pluginspage="http://www.macromedia.com/go/getflashplayer" ',
                             'flashvars="{$flashvars}" ',
+                            'bgcolor="{$bgcolor}" ',
                             'type="application/x-shockwave-flash" ',
                             'wmode="{$wmode}" ',
                         '></embed>',
@@ -287,6 +291,7 @@ var
                     .replace(/\{\$flashUrl\}/g, option.flashUrl)
                     .replace(/\{\$flashvars\}/g, option.flashvars)
                     .replace(/\{\$wmode\}/g, option.wmode)
+                    .replace(/\{\$bgcolor\}/g, option.bgcolor)
                     .replace(/\{\$fullscreen\}/g, option.fullscreen);
             },
 
