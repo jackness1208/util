@@ -163,10 +163,9 @@
 	            
 	            //IE浏览器
 	            if(util.UA.ie){
-	                return iObj.tagName.toLowerCase() === 'object'
-	                    ? iObj
-	                    : ''
-	                    ;
+	                return iObj.tagName.toLowerCase() === 'object' ? 
+	                    iObj : 
+	                    '' ;
 	            
 	            //非IE浏览器	
 	            } else {
@@ -383,9 +382,8 @@
 	        return util;
 	    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
-	} else {
-	    window.util = util;
 	}
+	window.util = util;
 
 
 /***/ },

@@ -14,5 +14,8 @@ test('util.flash.init', function(){
 
 
 
-    ok(new RegExp("<object [^>]*name=\""+ name +"\"", 'g').test(out), 'op.name check');
+    ok(out !== '', 'util.flash.init  run check');
+});
+test('util.Promise', function(){
+
 });

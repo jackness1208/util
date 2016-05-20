@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 var util = require('../base/util.js');
 
 util.extend(util, {
@@ -117,17 +117,15 @@ util.extend(util, {
             
             //IE浏览器
             if(util.UA.ie){
-                return iObj.tagName.toLowerCase() === 'object'
-                    ? iObj
-                    : ''
-                    ;
+                return iObj.tagName.toLowerCase() === 'object' ? 
+                    iObj : 
+                    '' ;
             
             //非IE浏览器	
             } else {
-                return iObj.tagName.toLowerCase() === 'embed'
-                    ? iObj
-                    : iObj.getElementsByTagName('embed')[0]
-                    ;
+                return iObj.tagName.toLowerCase() === 'embed' ? 
+                    iObj : 
+                    iObj.getElementsByTagName('embed')[0] ;
             }
         }
     },
@@ -337,6 +335,5 @@ if(typeof define != 'undefined' && define.amd){
         return util;
     });
 
-} else {
-    window.util = util;
 }
+window.util = util;
