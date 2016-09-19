@@ -17,5 +17,30 @@ test('util.flash.init', function(){
     ok(out !== '', 'util.flash.init  run check');
 });
 test('util.Promise', function(){
+    var 
+        r1 = '',
+        r2 = '',
+        padding = 0,
+        pm1 = new util.Promise(),
+        pm2 = new util.Promise();
 
+    pm1.then(function(next){
+        r1 += '1';
+        next();
+
+    }).then(function(next,prev){
+        setTimeout(function(){
+            r1 += '2';
+            if(padding++){
+                next();
+
+            } else {
+                prev();
+            }
+        }, 2000);
+
+    }).then(function(next){
+        r1 += '3';
+    });
+    
 });
